@@ -70,9 +70,9 @@ table {
 
 .navbar-brand {
   background-image: url("/static/themes/mts/img/logo-white-grad.png");
-  background-position: 20px 4px;
+  background-position: 0px 5px;
   background-repeat: no-repeat;
-  background-size: 110px;
+  background-size: 197px;
   padding-left: 0px;
 
   img {
@@ -145,7 +145,7 @@ table {
       background-image: url("/static/themes/mts/img/logo-white.png");
       background-repeat: no-repeat;
       background-size: 110px;
-      color: $brand-color;
+      color: $white;
       font-weight: bold;
       content: "Open cloud computing";
       display: block;
