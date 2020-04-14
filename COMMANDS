@@ -1,2 +1,12 @@
 # Connect to DB
 mysql -h 10.10.20.31 -P 3306 -uroot -pV2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF
+
+mysqlclient==1.4.6
+
+#TODO IN CONTAINER
+yum install mysql
+
+# Django - makemigrations - No changes detected
+My problem (and so solution) was yet different from those described above.
+I wasn't using models.py file, but created a models directory and created the my_model.py file there, where I put my model. Django couldn't find my model so it wrote that there are no migrations to apply.
+My solution was: in the my_app/models/__init__.py file I added this line: from .my_model import MyModel
