@@ -16,5 +16,6 @@ from openstack_dashboard.dashboards.news.overview import views
 
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
+    #url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.post_list, name='index'),
 ]

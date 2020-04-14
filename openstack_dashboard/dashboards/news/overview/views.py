@@ -11,7 +11,12 @@
 # under the License.
 
 from horizon import views
+from django.shortcuts import render
+from .models import Post
 
+def post_list(request):
+    posts = Post.objects.order_by('-created_date')
+    return render(request, 'news/overview/index.html', {'posts': posts})
 
 class IndexView(views.APIView):
     # A very simple class-based view...
