@@ -1,0 +1,2 @@
+# Connect to DB
+mysql -h 10.10.20.31 -P 3306 -uroot -pV2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF
