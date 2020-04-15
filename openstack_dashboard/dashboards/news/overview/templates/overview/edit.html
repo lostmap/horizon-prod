@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block title %}
+  {% trans "Overview" %}
+{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("New post") %}
+{% endblock page_header %}
+
+{% block main %}
+    <form method="POST" class="post-form" action="{% url 'horizon:news:overview:post_new' %}">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

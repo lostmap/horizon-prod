@@ -11,8 +11,22 @@
 # under the License.
 
 from horizon import views
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
+from django.utils import timezone
 from .models import Post
+from .forms import PostForm
+
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.created_date = timezone.now()
+            post.save()
+            return redirect('horizon:news:overview:post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'news/overview/edit.html', {'form': form})
 
 def post_list(request):
     page_title = 'Overview'
