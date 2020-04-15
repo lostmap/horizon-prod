@@ -11,12 +11,20 @@
 # under the License.
 
 from horizon import views
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 def post_list(request):
+    page_title = 'Overview'
     posts = Post.objects.order_by('-created_date')
-    return render(request, 'news/overview/index.html', {'posts': posts})
+    return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title})
+
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    page_title = post.title
+    return render(request, 'news/overview/detail.html', {'post': post, 'page_title': page_title})
+
 
 class IndexView(views.APIView):
     # A very simple class-based view...
