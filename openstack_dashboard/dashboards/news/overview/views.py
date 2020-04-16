@@ -57,6 +57,13 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
 
+@require_perms
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('horizon:news:overview:index')
+
+
 def post_list(request):
     admin_check = policy.check((("identity", "admin_required"),), request)
     page_title = 'Overview'
