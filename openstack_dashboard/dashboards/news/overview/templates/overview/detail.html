@@ -10,11 +10,13 @@
 {% endblock page_header %}
 
 {% block main %}
+  {% if admin %}
     <a href="{% url 'horizon:news:overview:post_edit' pk=post.pk %}" tabindex="0" class="btn btn-default">
         <span class="fa fa-edit"></span><span> Edit Post</span>
     </a>
-    <div>
-      <p>published: {{ post.created_date }}</p>
-      <p>{{ post.text|linebreaksbr }}</p>
+  {% endif %}
+  <div>
+    <p>published: {{ post.created_date }}</p>
+    <p>{{ post.text|linebreaksbr }}</p>
   </div>
 {% endblock %}

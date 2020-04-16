@@ -54,7 +54,7 @@ def require_auth(view_func):
     return dec
 
 
-def require_perms(view_func, required):
+def require_perms(view_func, required=['openstack.roles.admin']):
     """Enforces permission-based access controls.
 
     :param list required: A tuple of permission names, all of which the request

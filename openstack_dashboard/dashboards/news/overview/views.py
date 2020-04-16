@@ -12,6 +12,11 @@
 
 from horizon import views
 from horizon.decorators import require_perms, require_auth
+import functools
+
+from django.utils.decorators import available_attrs
+from django.utils.translation import ugettext_lazy as _
+
 from django.shortcuts import redirect, render, get_object_or_404
 #from django.http import HttpResponseRedirect
 from django.utils import timezone
@@ -23,8 +28,7 @@ from openstack_dashboard import policy
 #policy.check((("identity", "admin_required"),), request)
 #context['create_network_allowed'] = policy.check((("network", "create_network"),), request)
 
-#@require_perms('post_new',['openstack.roles.admin'])
-@require_auth
+@require_perms
 def post_new(request):
     page_title = 'Create Post'
     if request.method == "POST":
@@ -38,6 +42,7 @@ def post_new(request):
         form = PostForm()
     return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
 
+@require_perms
 def post_edit(request, pk):
     page_title = 'Edit Post'
     post = get_object_or_404(Post, pk=pk)
@@ -52,7 +57,6 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
 
-
 def post_list(request):
     admin_check = policy.check((("identity", "admin_required"),), request)
     page_title = 'Overview'
@@ -61,9 +65,10 @@ def post_list(request):
 
 
 def post_detail(request, pk):
+    admin_check = policy.check((("identity", "admin_required"),), request)
     post = get_object_or_404(Post, pk=pk)
     page_title = post.title
-    return render(request, 'news/overview/detail.html', {'post': post, 'page_title': page_title})
+    return render(request, 'news/overview/detail.html', {'post': post, 'page_title': page_title, 'admin': admin_check})
 
 
 class IndexView(views.APIView):

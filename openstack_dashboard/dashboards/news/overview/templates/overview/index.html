@@ -11,16 +11,16 @@
 
 {% block main %}
   {% if admin %}
-  <a href="{% url 'horizon:news:overview:post_new' %}" tabindex="0" class="btn btn-default">
-    <span class="fa fa-plus"></span><span> Create Post</span>
-  </a>
+    <a href="{% url 'horizon:news:overview:post_new' %}" tabindex="0" class="btn btn-default">
+      <span class="fa fa-plus"></span><span> Create Post</span>
+    </a>
   {% endif %}
   {% for post in posts %}
     <div>
       <p>published: {{ post.created_date }}</p>
       <h1><a href="{% url 'horizon:news:overview:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
       <p>{{ post.text|linebreaksbr }}</p>
-  </div>
+    </div>
   {% endfor %}
 {% endblock %}
 
