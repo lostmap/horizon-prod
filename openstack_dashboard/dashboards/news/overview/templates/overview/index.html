@@ -10,9 +10,11 @@
 {% endblock page_header %}
 
 {% block main %}
+  {% if admin %}
   <a href="{% url 'horizon:news:overview:post_new' %}" tabindex="0" class="btn btn-default">
     <span class="fa fa-plus"></span><span> Create Post</span>
   </a>
+  {% endif %}
   {% for post in posts %}
     <div>
       <p>published: {{ post.created_date }}</p>

@@ -18,6 +18,7 @@ from openstack_dashboard.dashboards.news import dashboard
 class Overview(horizon.Panel):
     name = _("Overview")
     slug = "overview"
+    #permissions = ('openstack.roles.admin',)
 
 
 dashboard.News.register(Overview)

@@ -11,27 +11,53 @@
 # under the License.
 
 from horizon import views
+from horizon.decorators import require_perms, require_auth
 from django.shortcuts import redirect, render, get_object_or_404
+#from django.http import HttpResponseRedirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+#from django.urls import reverse
+from openstack_dashboard import policy
 
+#policy.check((("identity", "admin_required"),), request)
+#context['create_network_allowed'] = policy.check((("network", "create_network"),), request)
+
+#@require_perms('post_new',['openstack.roles.admin'])
+@require_auth
 def post_new(request):
+    page_title = 'Create Post'
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.created_date = timezone.now()
             post.save()
-            return redirect('horizon:news:overview:post_detail', pk=post.pk)
+            return redirect('horizon:news:overview:index')
     else:
         form = PostForm()
-    return render(request, 'news/overview/edit.html', {'form': form})
+    return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
+
+def post_edit(request, pk):
+    page_title = 'Edit Post'
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.created_date = timezone.now()
+            post.save()
+            return redirect('horizon:news:overview:post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
+
 
 def post_list(request):
+    admin_check = policy.check((("identity", "admin_required"),), request)
     page_title = 'Overview'
     posts = Post.objects.order_by('-created_date')
-    return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title})
+    return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title, 'admin': admin_check})
 
 
 def post_detail(request, pk):
