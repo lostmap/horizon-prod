@@ -7,4 +7,5 @@ DISABLED = False
 # A list of applications to be added to INSTALLED_APPS.
 ADD_INSTALLED_APPS = [
     'openstack_dashboard.dashboards.news',
+    'django_summernote',
 ]

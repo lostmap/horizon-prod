@@ -19,7 +19,7 @@
     <div>
       <p>published: {{ post.created_date }}</p>
       <h1><a href="{% url 'horizon:news:overview:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p>{{ post.text|linebreaksbr }}</p>
+      <p>{{ post.text | safe }}</p>
     </div>
   {% endfor %}
 {% endblock %}

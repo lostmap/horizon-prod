@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^api/', include(rest.urls)),
     url(r'^header/', views.ExtensibleHeaderView.as_view()),
     url(r'', horizon.base._wrapped_include(horizon.urls)),
+    url(r'^summernote/', include('django_summernote.urls')),
 ]
 
 # add URL for ngdetails

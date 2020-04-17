@@ -20,6 +20,6 @@
   {% endif %}
   <div>
     <p>published: {{ post.created_date }}</p>
-    <p>{{ post.text|linebreaksbr }}</p>
+    <p>{{ post.text | safe }}</p>
   </div>
 {% endblock %}

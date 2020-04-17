@@ -5,6 +5,7 @@ docker logs --tail 50 --follow --timestamps horizon
 mysql -h 10.10.20.31 -P 3306 -uroot -pV2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF
 
 mysqlclient==1.4.6
+django-summernote==0.8.11.6
 
 #TODO IN CONTAINER
 yum install mysql
