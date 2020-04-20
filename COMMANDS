@@ -1,6 +1,14 @@
 #docker logs
 docker logs --tail 50 --follow --timestamps horizon
 
+#Add to horizon conf
+    Alias /media /var/lib/kolla/venv/lib/python2.7/site-packages/media
+    <Location "/media">
+        SetHandler None
+    </Location>
+mkdir media
+chown horizon:horizon media/
+
 # Connect to DB
 mysql -h 10.10.20.31 -P 3306 -uroot -pV2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF
 

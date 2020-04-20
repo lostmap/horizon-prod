@@ -44,8 +44,8 @@ def post_new(request):
 
 @require_perms
 def post_edit(request, pk):
-    page_title = 'Edit Post'
     post = get_object_or_404(Post, pk=pk)
+    page_title = post.title
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -55,7 +55,7 @@ def post_edit(request, pk):
             return redirect('horizon:news:overview:post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'news/overview/edit.html', {'form': form, 'page_title': page_title})
+    return render(request, 'news/overview/edit.html', {'post': post, 'form': form, 'page_title': page_title})
 
 @require_perms
 def post_delete(request, pk):

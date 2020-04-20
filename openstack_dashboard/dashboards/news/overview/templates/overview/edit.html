@@ -2,11 +2,11 @@
 
 {% load i18n %}
 {% block title %}
-  {% trans "Overview" %}
+  {% trans post.title %}
 {% endblock %}
 
 {% block page_header %}
-  {% include "horizon/common/_page_header.html" with title=_("New post") %}
+  {% include "horizon/common/_page_header.html" with title=post.title %}
 {% endblock page_header %}
 
 {% block main %}
