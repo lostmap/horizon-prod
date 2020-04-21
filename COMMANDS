@@ -22,3 +22,17 @@ yum install mysql
 My problem (and so solution) was yet different from those described above.
 I wasn't using models.py file, but created a models directory and created the my_model.py file there, where I put my model. Django couldn't find my model so it wrote that there are no migrations to apply.
 My solution was: in the my_app/models/__init__.py file I added this line: from .my_model import MyModel
+
+#mysql Connect
+mysql -h 10.10.20.31 -P 3306 -uroot -pV2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF
+
+# What to do to make it work
+1. pip install django-summernote (After this point container stops failing at start)
+2. CREATE DATABASE news;
+3. manage.py migrate (almost everything works)
+4. mkdir media
+5. chown horizon:horizon media
+6. Alias /media /var/lib/kolla/venv/lib/python2.7/site-packages/media 
+   <Location "/media">
+       SetHandler None
+   </Location>
