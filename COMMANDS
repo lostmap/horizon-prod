@@ -1,3 +1,7 @@
+#git tag
+Super important, without it image build won't work
+git push origin --tags
+
 #docker logs
 docker logs --tail 50 --follow --timestamps horizon
 
