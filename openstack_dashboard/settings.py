@@ -176,17 +176,6 @@ CACHES = {
     },
 }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'news',
-        'USER': 'root',
-        'PASSWORD': 'V2caLoBGf8rsaIYY3YL2pTWBB5bo6jcNk4Mea7fF',
-        'HOST': '10.10.20.31', 
-        'PORT': '3306',
-    }
-}
-
 SESSION_COOKIE_HTTPONLY = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_SECURE = False
