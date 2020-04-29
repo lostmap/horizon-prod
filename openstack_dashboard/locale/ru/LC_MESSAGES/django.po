@@ -1348,7 +1348,7 @@ msgid "Create Image"
 msgstr "Создать образ"
 
 msgid "Create Key Pair"
-msgstr "Создать ключевую пару"
+msgstr "Создать SSH ключ"
 
 msgid "Create Mapping"
 msgstr "Создать преобразование"
@@ -1799,9 +1799,9 @@ msgstr[2] "Удалить интерфейсы"
 
 msgid "Delete Key Pair"
 msgid_plural "Delete Key Pairs"
-msgstr[0] "Удалить ключевую пару"
-msgstr[1] "Удалить ключевые пары"
-msgstr[2] "Удалить ключевые пары"
+msgstr[0] "Удалить SSH ключ"
+msgstr[1] "Удалить SSH ключи"
+msgstr[2] "Удалить SSH ключи"
 
 msgid "Delete Mapping"
 msgid_plural "Delete Mappings"
@@ -2021,9 +2021,9 @@ msgstr[2] "Интерфейсы удалены"
 
 msgid "Deleted Key Pair"
 msgid_plural "Deleted Key Pairs"
-msgstr[0] "Удаленная ключевая пара"
-msgstr[1] "Удаленные ключевые пары"
-msgstr[2] "Удаленные ключевые пары"
+msgstr[0] "Удаленный SSH ключ"
+msgstr[1] "Удаленные SSH ключи"
+msgstr[2] "Удаленные SSH ключи"
 
 msgid "Deleted Mapping"
 msgid_plural "Deleted Mappings"
@@ -3770,7 +3770,7 @@ msgstr ""
 "загружены c локальной файловой системы."
 
 msgid "Import Key Pair"
-msgstr "Импорт ключевой пары"
+msgstr "Импорт SSH ключа"
 
 msgid "Import Namespace"
 msgstr "Импортировать Пространство Имён"
@@ -3942,25 +3942,25 @@ msgid "Key Name"
 msgstr "Название ключа"
 
 msgid "Key Pair"
-msgstr "Ключевая пара"
+msgstr "SSH ключ"
 
 msgid "Key Pair Details"
-msgstr "Детали ключевой пары"
+msgstr "Детали SSH ключа"
 
 msgid "Key Pair Name"
-msgstr "Имя ключевой пары"
+msgstr "Имя SSH ключа"
 
 msgid "Key Pair Name ="
-msgstr "Имя ключевой пары ="
+msgstr "Имя SSH ключа ="
 
 msgid "Key Pair Type"
-msgstr "Тип ключевой пары"
+msgstr "Тип SSH ключа"
 
 msgid "Key Pairs"
-msgstr "Ключевые пары"
+msgstr "SSH ключи"
 
 msgid "Key Pairs are how you login to your instance after it is launched."
-msgstr "Ключевые пары нужны для входа в инстанс после его запуска."
+msgstr "SSH ключи нужны для входа в инстанс после его запуска."
 
 msgid "Key Size (bits)"
 msgstr "Размер Ключа (бит)"
@@ -3979,11 +3979,11 @@ msgid ""
 "Key pair name may only contain letters, numbers, underscores, spaces, and "
 "hyphens and may not be white space."
 msgstr ""
-"Имя ключевой пары может содержать только буквы, числа, нижние подчеркивания, "
+"Имя SSH ключа может содержать только буквы, числа, нижние подчеркивания, "
 "пробелы, дефисы и не может содержать пробелы."
 
 msgid "Key pair to use for authentication."
-msgstr "Ключевые пары используют для аутентификации."
+msgstr "SSH ключи используют для аутентификации."
 
 #, python-format
 msgid ""
@@ -4647,7 +4647,7 @@ msgid "No instances available"
 msgstr "Нет доступных инстансов"
 
 msgid "No key pairs available"
-msgstr "Нет доступных ключевых пар"
+msgstr "Нет доступных SSH ключей"
 
 msgid "No mappings available"
 msgstr "Нет доступных преобразований"
@@ -5700,7 +5700,7 @@ msgid "SSH Key"
 msgstr "Ключ SSH"
 
 msgid "SSH key pairs can be generated with the ssh-keygen command:"
-msgstr "Ключевые пары  SSH могут быть сгенерированы ssh-keygen командой:"
+msgstr "SSH ключи могут быть сгенерированы ssh-keygen командой:"
 
 msgid "Save"
 msgstr "Сохранить"
@@ -5858,7 +5858,7 @@ msgid "Select a floating IP to disassociate"
 msgstr "Выберите назначаемый IP для отсоединения"
 
 msgid "Select a key pair"
-msgstr "Выберите ключевую пару"
+msgstr "Выберите SSH ключ"
 
 msgid "Select a network"
 msgstr "Выберите сеть"
@@ -6685,7 +6685,7 @@ msgid "The JSON formatted contents of a namespace."
 msgstr "Содержание пространства имён в формате JSON."
 
 msgid "The Key Pair name that was associated with the instance"
-msgstr "Имя ключевой пары связанной с инстансом"
+msgstr "Имя SSH ключа связанного с инстансом"
 
 msgid "The L3 agent information could not be located."
 msgstr "Не удалось найти информацию о L3 агенте."
@@ -6780,7 +6780,7 @@ msgid ""
 "The key pair &quot;%(keypair_name)s&quot; should download automatically. If "
 "not, use the button below."
 msgstr ""
-"Загрузка ключевой пары &quot;%(keypair_name)s&quot; должна начаться "
+"Загрузка SSH ключа &quot;%(keypair_name)s&quot; должна начаться "
 "автоматически. Если этого не произошло, используйте кнопку ниже."
 
 msgid ""
@@ -6988,7 +6988,7 @@ msgid ""
 "This generates a pair of keys: a key you keep private (cloud.key) and a "
 "public key (cloud.key.pub). Paste the contents of the public key file here."
 msgstr ""
-"Тут генерируется ключевая пара: приватный ключ (cloud.key) и публичный ключ "
+"Тут генерируется пара SSH ключей: приватный ключ (cloud.key) и публичный ключ "
 "(cloud.key.pub). Вставьте содержимое файла публичного ключа сюда."
 
 msgid ""
@@ -7048,9 +7048,9 @@ msgid ""
 "this instance. Select the private key file, or copy and paste the content of "
 "your private key file into the text area below, then click Decrypt Password."
 msgstr ""
-"Для расшифровки пароля вам понадобится частный ключ вашей ключевой пары для "
-"этого инстанса. Выберите файл частного ключа или вставьте содержимое файла "
-"частного ключа в текстовое поле ниже и нажмите Расшифровать пароль."
+"Для расшифровки пароля вам понадобится закрытый SSH ключ для "
+"этого инстанса. Выберите файл закрытого ключа или вставьте содержимое файла "
+"закрытого ключа в текстовое поле ниже и нажмите Расшифровать пароль."
 
 msgid "To exit the fullscreen mode, click the browser's back button."
 msgstr ""
@@ -7523,7 +7523,7 @@ msgid "Unable to get the available volumes"
 msgstr "Не удалось получить доступные тома"
 
 msgid "Unable to import key pair."
-msgstr "Не удалось импортировать ключевую пару."
+msgstr "Не удалось импортировать SSH ключ."
 
 msgid "Unable to initialize subnetpools"
 msgstr "Невозможно инициализировать пулы подсетей"
@@ -7716,7 +7716,7 @@ msgstr "Не удалось получить подробную информац
 
 #, python-format
 msgid "Unable to retrieve details for keypair \"%s\"."
-msgstr "Не удалось получить подробную информацию о ключевой паре \"%s\"."
+msgstr "Не удалось получить подробную информацию о SSH ключе \"%s\"."
 
 #, python-format
 msgid "Unable to retrieve details for network \"%s\"."
@@ -7908,10 +7908,10 @@ msgid "Unable to retrieve instances."
 msgstr "Не удалось получить инстансы."
 
 msgid "Unable to retrieve key pair list."
-msgstr "Не удалось получить список ключевых пар"
+msgstr "Не удалось получить список SSH ключей"
 
 msgid "Unable to retrieve key pairs."
-msgstr "Не удалось получить ключевую пару"
+msgstr "Не удалось получить SSH ключ"
 
 msgid "Unable to retrieve limits information."
 msgstr "Не удалось получить информацию об ограничениях."
