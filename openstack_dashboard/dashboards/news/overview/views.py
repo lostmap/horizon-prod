@@ -66,7 +66,7 @@ def post_delete(request, pk):
 
 def post_list(request):
     admin_check = policy.check((("identity", "admin_required"),), request)
-    page_title = 'Overview'
+    page_title = _("Overview")
     posts = Post.objects.order_by('-created_date')
     return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title, 'admin': admin_check})
 

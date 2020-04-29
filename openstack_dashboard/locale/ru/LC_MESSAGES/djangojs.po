@@ -4090,3 +4090,7 @@ msgstr ""
 
 msgid "News"
 msgstr "Новости"
+
+msgid "Latest"
+msgstr "Главное"
+
