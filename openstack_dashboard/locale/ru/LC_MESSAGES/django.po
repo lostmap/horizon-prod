@@ -1091,7 +1091,7 @@ msgid ""
 "Choose a key pair name you will recognise and paste your SSH public key into "
 "the space provided."
 msgstr ""
-"Выберите узнаваемое имя для ключевой пары и вставьте публичный ключ в "
+"Выберите узнаваемое имя для SSH ключа и вставьте публичный ключ в "
 "предоставленное место."
 
 msgid "Choose a snapshot"
@@ -1268,7 +1268,7 @@ msgid ""
 "Control access to your instance via key pairs, security groups, and other "
 "mechanisms."
 msgstr ""
-"Контроль доступа к инстансу с помощью ключевой пары, групп безопасности и "
+"Контроль доступа к инстансу с помощью SSH ключей, групп безопасности и "
 "других механизмов."
 
 msgid "Cookies may be turned off. Make sure cookies are enabled and try again."
@@ -5344,7 +5344,7 @@ msgstr "Повторно создать идентификационные да�
 
 #, python-format
 msgid "Regenerate and download Key Pair &quot;%(keypair_name)s&quot;"
-msgstr "Пересоздать и выгрузить ключевую пару &quot;%(keypair_name)s&quot;"
+msgstr "Пересоздать и выгрузить SSH ключ &quot;%(keypair_name)s&quot;"
 
 msgid "Region"
 msgstr "Регион"
@@ -5419,8 +5419,8 @@ msgid ""
 "Removing a key pair can leave OpenStack resources orphaned. You should not "
 "remove a key pair unless you are certain it is not being used anywhere."
 msgstr ""
-"При удалении ключевой пары ресурсы OpenStack могут стать потерянными. "
-"Рекомендуется не удалять ключевую пару, если она где-либо используется."
+"При удалении SSH ключа ресурсы OpenStack могут стать потерянными. "
+"Рекомендуется не удалять SSH ключ, если он где-либо используется."
 
 #, python-format
 msgid "Removing volumes from volume group \"%s\""
