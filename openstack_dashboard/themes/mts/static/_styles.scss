@@ -247,3 +247,33 @@ a.btn-danger:hover {
 .modal-body p {
   margin: 0 0 9px;
 }
+
+/* Additional SCSS for {{ dash_name }}. */
+.post-frame {
+  border-radius: 8px;
+  margin: 10px 0px;
+  padding: 5px 20px;
+  box-shadow: 0 0 31px -5px #666365;
+  
+}
+.post-buttons {
+  margin-bottom: 10px;
+}
+
+
+.post-title, a.post-title, a.post-title:link, a.post-title:visited {
+  text-decoration: none;
+  color: black;
+}
+.post-date {
+  font-weight: bold;
+}
+.post-text {
+
+}
+.post-top {
+  margin-top: 0px
+}
+.post-bottom {
+  margin-bottom: 0px
+}

@@ -70,7 +70,7 @@ def post_list(request):
     posts = Post.objects.order_by('-created_date')
     return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title, 'admin': admin_check})
 
-
+@require_perms
 def post_detail(request, pk):
     admin_check = policy.check((("identity", "admin_required"),), request)
     post = get_object_or_404(Post, pk=pk)
