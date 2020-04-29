@@ -4087,3 +4087,6 @@ msgid ""
 msgstr ""
 "{$ ctrl.model.counted.files $} файлов в\n"
 "      {$ ctrl.model.counted.folders $} папках."
+
+msgid "News"
+msgstr "Новости"

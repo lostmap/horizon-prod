@@ -12,10 +12,10 @@
 {% block main %}
   {% if admin %}
     <a href="{% url 'horizon:news:overview:post_edit' pk=post.pk %}" tabindex="0" class="btn btn-default">
-        <span class="fa fa-edit"></span><span> Edit Post</span>
+        <span class="fa fa-edit"></span><span>{% trans "Edit Post" %}</span>
     </a>
     <a href="{% url 'horizon:news:overview:post_delete' pk=post.pk %}" tabindex="0" class="btn btn-danger">
-      <span class="fa fa-trash"></span><span> Delete Post</span>
+      <span class="fa fa-trash"></span><span>{% trans " Delete Post" %}</span>
   </a>
   {% endif %}
   <div>

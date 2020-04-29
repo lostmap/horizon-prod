@@ -9216,3 +9216,15 @@ msgstr "vCPU ="
 
 msgid "yes"
 msgstr "да"
+
+msgid "News"
+msgstr "Новости"
+
+msgid "Create Post"
+msgstr "Создать новость"
+
+msgid " Delete Post"
+msgstr " Удалить"
+
+msgid "Edit Post"
+msgstr "Редактировать"
