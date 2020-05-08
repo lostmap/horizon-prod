@@ -133,7 +133,7 @@ class SetInstanceDetailsAction(workflows.Action):
 
     vol_delete_on_instance_delete = forms.BooleanField(
         label=_("Delete Volume on Instance Delete"),
-        initial=False,
+        initial=True,
         required=False,
         help_text=_("Delete volume when the instance is deleted"))
 
