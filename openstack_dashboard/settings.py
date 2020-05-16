@@ -367,17 +367,17 @@ STATICFILES_DIRS += settings_utils.get_xstatic_dirs(
     XSTATIC_MODULES, HORIZON_CONFIG)
 
 
-AWS_ACCESS_KEY_ID = '2dff69e63984445c819a1a3c3328bf8b'
-AWS_SECRET_ACCESS_KEY = '9bbe336440c94b079a19bb7b89aec749'
-AWS_STORAGE_BUCKET_NAME = 'news'
-AWS_S3_CUSTOM_DOMAIN = 'localhost'
-AWS_S3_ADDRESSING_STYLE = 'path'
-AWS_S3_VERIFY = False
-AWS_S3_REGION_NAME = 'RegionOne'
-AWS_S3_ENDPOINT_URL = 'https://localhost/'
+#AWS_ACCESS_KEY_ID = '2dff69e63984445c819a1a3c3328bf8b'
+#AWS_SECRET_ACCESS_KEY = '9bbe336440c94b079a19bb7b89aec749'
+#AWS_STORAGE_BUCKET_NAME = 'news'
+#AWS_S3_CUSTOM_DOMAIN = 'localhost'
+#AWS_S3_ADDRESSING_STYLE = 'path'
+#AWS_S3_VERIFY = False
+#AWS_S3_REGION_NAME = 'RegionOne'
+#AWS_S3_ENDPOINT_URL = 'https://localhost/'
 
 # Enable s3 backend for media
-DEFAULT_FILE_STORAGE = 'openstack_dashboard.storage_backends.MediaStorage' 
+#DEFAULT_FILE_STORAGE = 'openstack_dashboard.storage_backends.MediaStorage' 
 
 # This base context objects gets added to the offline context generator
 # for each theme configured.
@@ -403,7 +403,7 @@ LOCALE_PATHS = [
 # Here comes the Django settings deprecation section. Being at the very end
 # of settings.py allows it to catch the settings defined in local_settings.py
 # or inside one of local_settings.d/ snippets.
-SUMMERNOTE_CONFIG = {
-    'attachment_s3_backend': True,
-    'attachment_s3_url': 'https://localhost/ad74b43ed78b42d8b78c5c2c65881ab2%3Anews/',
-}
+#SUMMERNOTE_CONFIG = {
+#    'attachment_s3_backend': True,
+#    'attachment_s3_url': 'https://localhost/ad74b43ed78b42d8b78c5c2c65881ab2%3Anews/',
+#}
