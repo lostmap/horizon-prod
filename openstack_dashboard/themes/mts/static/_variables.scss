@@ -1,0 +1,17 @@
+@import "bootstrap/variables";
+@import "horizon/variables";
+@import "/horizon/lib/font_awesome/scss/variables";
+
+/* Custom Variables */
+$font-size-base: 13px;
+$brand-color: #e30611; 
+$topbar-link-hover: #e30611;
+$white: #fff;
+$light-grey: #f7f7f7;
+
+$brand-primary: $brand-color;
+
+$nav-active-color: #e30611;
+$nav-hover-color: #e30611;
+
+$table-bg: #efefef;
