@@ -1,6 +1,13 @@
 import os
 import boto3
 from pathlib import Path
+from django.conf import settings
+
+#AWS_S3_REGION_NAME = 'RegionOne'
+#AWS_S3_VERIFY = False
+#AWS_S3_ENDPOINT_URL = 'https://localhost/'
+#AWS_ACCESS_KEY_ID = '2dff69e63984445c819a1a3c3328bf8b'
+#AWS_SECRET_ACCESS_KEY = '9bbe336440c94b079a19bb7b89aec749'
 
 class S3Sync:
     """
@@ -8,10 +15,12 @@ class S3Sync:
     """
 
     def __init__(self):
-        self._s3 = boto3.client('s3', region_name="RegionOne", verify=False,
-                        endpoint_url="https://localhost",
-                        aws_access_key_id="2dff69e63984445c819a1a3c3328bf8b",
-                        aws_secret_access_key="9bbe336440c94b079a19bb7b89aec749")
+        self._s3 = boto3.client('s3',
+                        region_name=settings.AWS_S3_REGION_NAME,
+                        verify=settings.AWS_S3_VERIFY,
+                        endpoint_url=settings.AWS_S3_ENDPOINT_URL,
+                        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+                        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
 
     def sync_to(self, source, dest):
         """
