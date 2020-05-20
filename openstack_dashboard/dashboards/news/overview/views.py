@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from horizon import exceptions
 from horizon import views
 from horizon.decorators import require_perms, require_auth
 import functools
@@ -24,6 +25,7 @@ from .models import Post
 from .forms import PostForm
 #from django.urls import reverse
 from openstack_dashboard import policy
+from .s3_backend import S3Sync
 
 #policy.check((("identity", "admin_required"),), request)
 #context['create_network_allowed'] = policy.check((("network", "create_network"),), request)
@@ -31,9 +33,17 @@ from openstack_dashboard import policy
 @require_perms
 def post_new(request):
     page_title = 'Create Post'
+    try:
+        S3Sync().sync_from("news", "/var/lib/kolla/venv/lib/python2.7/site-packages/media")
+    except Exception:
+        exceptions.handle(request, _("Unable to retrieve s3 media backend."))
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+            try:
+                S3Sync().sync_to("/var/lib/kolla/venv/lib/python2.7/site-packages/media", "news")
+            except Exception:
+                exceptions.handle(request, _("Unable to retrieve s3 media backend."))
             post = form.save(commit=False)
             post.created_date = timezone.now()
             post.save()
@@ -44,11 +54,19 @@ def post_new(request):
 
 @require_perms
 def post_edit(request, pk):
+    try:
+        S3Sync().sync_from("news", "/var/lib/kolla/venv/lib/python2.7/site-packages/media")
+    except Exception:
+        exceptions.handle(request, _("Unable to retrieve s3 media backend."))
     post = get_object_or_404(Post, pk=pk)
     page_title = post.title
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
+            try:
+                S3Sync().sync_to("/var/lib/kolla/venv/lib/python2.7/site-packages/media", "news")
+            except Exception:
+                exceptions.handle(request, _("Unable to retrieve s3 media backend."))
             post = form.save(commit=False)
             post.created_date = timezone.now()
             post.save()
@@ -67,12 +85,20 @@ def post_delete(request, pk):
 def post_list(request):
     admin_check = policy.check((("identity", "admin_required"),), request)
     page_title = _("Overview")
+    try:
+        S3Sync().sync_from("news", "/var/lib/kolla/venv/lib/python2.7/site-packages/media")
+    except Exception:
+        exceptions.handle(request, _("Unable to retrieve s3 media backend."))
     posts = Post.objects.order_by('-created_date')
     return render(request, 'news/overview/index.html', {'posts': posts, 'page_title': page_title, 'admin': admin_check})
 
 @require_perms
 def post_detail(request, pk):
     admin_check = policy.check((("identity", "admin_required"),), request)
+    try:
+        S3Sync().sync_from("news", "/var/lib/kolla/venv/lib/python2.7/site-packages/media")
+    except Exception:
+        exceptions.handle(request, _("Unable to retrieve s3 media backend."))
     post = get_object_or_404(Post, pk=pk)
     page_title = post.title
     return render(request, 'news/overview/detail.html', {'post': post, 'page_title': page_title, 'admin': admin_check})
