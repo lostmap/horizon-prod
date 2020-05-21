@@ -284,7 +284,7 @@
 
             expect(ctrl.currentBootSource).toEqual('image');
             expect(scope.model.newInstanceSpec.vol_create).toBe(false);
-            expect(scope.model.newInstanceSpec.vol_delete_on_instance_delete).toBe(false);
+            expect(scope.model.newInstanceSpec.vol_delete_on_instance_delete).toBe(true);
 
             // check table data
             expect(ctrl.tableData).toBeDefined();
@@ -300,7 +300,7 @@
 
             expect(ctrl.currentBootSource).toEqual('image');
             expect(scope.model.newInstanceSpec.vol_create).toBe(true);
-            expect(scope.model.newInstanceSpec.vol_delete_on_instance_delete).toBe(false);
+            expect(scope.model.newInstanceSpec.vol_delete_on_instance_delete).toBe(true);
           });
 
           it('should broadcast event when boot source changes', function() {

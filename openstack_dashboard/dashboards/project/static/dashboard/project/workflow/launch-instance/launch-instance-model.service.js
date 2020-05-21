@@ -205,7 +205,7 @@
         // REQUIRED for JS logic
         hide_create_volume: false,
         vol_create: false,
-        vol_delete_on_instance_delete: false,
+        vol_delete_on_instance_delete: true,
         vol_size: 1
       };
     }
