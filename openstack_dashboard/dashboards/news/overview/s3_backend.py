@@ -1,6 +1,7 @@
 import os
 import boto3
 from pathlib import Path
+from botocore.client import Config
 from django.conf import settings
 
 #AWS_S3_REGION_NAME = 'RegionOne'
@@ -16,6 +17,7 @@ class S3Sync:
 
     def __init__(self):
         self._s3 = boto3.client('s3',
+			config=Config(connect_timeout=5, retries={'max_attempts': 0}),
                         region_name=settings.AWS_S3_REGION_NAME,
                         verify=settings.AWS_S3_VERIFY,
                         endpoint_url=settings.AWS_S3_ENDPOINT_URL,
