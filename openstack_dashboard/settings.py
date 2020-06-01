@@ -483,6 +483,17 @@ XSTATIC_MODULES += HORIZON_CONFIG['xstatic_modules']
 STATICFILES_DIRS += settings_utils.get_xstatic_dirs(
     XSTATIC_MODULES, HORIZON_CONFIG)
 
+
+#AWS_ACCESS_KEY_ID = '2dff69e63984445c819a1a3c3328bf8b'
+#AWS_SECRET_ACCESS_KEY = '9bbe336440c94b079a19bb7b89aec749'
+#AWS_STORAGE_BUCKET_NAME = 'news'
+#AWS_S3_CUSTOM_DOMAIN = 'localhost'
+#AWS_S3_ADDRESSING_STYLE = 'path'
+#AWS_S3_VERIFY = False
+#AWS_S3_REGION_NAME = 'RegionOne'
+#AWS_S3_ENDPOINT_URL = 'https://localhost/'
+
+
 # This base context objects gets added to the offline context generator
 # for each theme configured.
 HORIZON_COMPRESS_OFFLINE_CONTEXT_BASE = {
