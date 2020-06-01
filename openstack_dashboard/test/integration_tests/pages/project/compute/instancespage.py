@@ -1,4 +1,4 @@
-#    Licensed under the Apache License, Version 2.0 (the "License"); you may
+	#    Licensed under the Apache License, Version 2.0 (the "License"); you may
 #    not use this file except in compliance with the License. You may obtain
 #    a copy of the License at
 #
@@ -54,7 +54,7 @@ class InstancesPage(basepage.BaseNavigationPage):
     DEFAULT_VOLUME_NAME = None
     DEFAULT_SNAPSHOT_NAME = None
     DEFAULT_VOLUME_SNAPSHOT_NAME = None
-    DEFAULT_VOL_DELETE_ON_INSTANCE_DELETE = False
+    DEFAULT_VOL_DELETE_ON_INSTANCE_DELETE = True
     DEFAULT_SECURITY_GROUP = True
 
     INSTANCES_TABLE_NAME_COLUMN = 'Instance Name'
