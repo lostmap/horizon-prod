@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load static %}
+{% block title %}
+  {% trans "Overview" %}
+{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Latest") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% if admin %}
+  <div class="post-buttons">
+    <a style="text-decoration: none" href="{% url 'horizon:news:overview:post_new' %}" tabindex="0" class="btn btn-default">
+      <span class="fa fa-plus"></span><span> {% trans "Create Post" %}</span>
+    </a>
+  </div>
+  {% endif %}
+    {% for post in posts %}
+      <div class="col-xs-8 post-frame">
+        {% if admin %}
+        <div><h1><a class="post-title" href="{% url 'horizon:news:overview:post_detail' pk=post.pk %}">{{ post.title }}</a></h1></div>
+        {% else %}
+        <div><h1 class="post-title">{{ post.title }}</h1></div>
+        {% endif %}
+        <hr class="post-top">
+        <div class="post-text"><p>{{ post.text | safe }}</p></div>
+        <hr class="post-bottom">
+        <div class="post-date"><p>{{ post.created_date }}</p></div>
+      </div>
+  {% endfor %}
+  
+{% endblock %}
+

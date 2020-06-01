@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block title %}
+  {% trans post.title %}
+{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=post.title %}
+{% endblock page_header %}
+
+{% block main %}
+    <form method="POST" class="post-form" action="">{% csrf_token %}
+        {{ form.as_p | safe }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% block title %}
+  {% trans post.title %}
+{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=post.title %}
+{% endblock page_header %}
+
+{% block main %}
+  {% if admin %}
+    <a href="{% url 'horizon:news:overview:post_edit' pk=post.pk %}" tabindex="0" class="btn btn-default">
+        <span class="fa fa-edit"></span><span>{% trans "Edit Post" %}</span>
+    </a>
+    <a href="{% url 'horizon:news:overview:post_delete' pk=post.pk %}" tabindex="0" class="btn btn-danger">
+      <span class="fa fa-trash"></span><span>{% trans " Delete Post" %}</span>
+  </a>
+  {% endif %}
+  <div>
+    <p>published: {{ post.created_date }}</p>
+    <p>{{ post.text | safe }}</p>
+  </div>
+{% endblock %}
